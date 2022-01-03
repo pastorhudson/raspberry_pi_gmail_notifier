@@ -7,7 +7,7 @@ from base64 import b64encode
 import RPi.GPIO as GPIO
 from pathlib import Path
 
-p = Path('./config.ini')
+p = Path('/home/pi/raspberry_pi_gmail_notifier/config.ini')
 config = configparser.ConfigParser()
 config.read(p.absolute())
 
