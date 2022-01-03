@@ -35,7 +35,7 @@ def get_inbox_count():
 
 
 def set_gpio(status):
-    print(f"Setting PIN: {config['DEFAULT']['PIN']} to {status}")
+    # print(f"Setting PIN: {config['DEFAULT']['PIN']} to {status}")
 
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM) # tell the Pi what headers to use
@@ -55,7 +55,7 @@ if __name__ == '__main__':
         sys.exit(1)
     while True:
         inbox_count = get_inbox_count()
-        print(f"INBOX COUNT: {inbox_count}")
+        # print(f"INBOX COUNT: {inbox_count}")
 
         if inbox_count > 0:
             set_gpio(True)
