@@ -18,8 +18,8 @@ EMAIL = someemail@gmail.com
 PASS = secretpass
 # The PIN to toggle
 PIN = 14
-
-
+# How Many Seconds to Wait between Checking Email
+SECONDS = 10
 ```
 
 ## 3 Run the script

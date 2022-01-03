@@ -1,4 +1,5 @@
 import sys
+import time
 from xml.etree import ElementTree
 import configparser
 from http.client import HTTPSConnection
@@ -48,14 +49,17 @@ def set_gpio(status):
 
 
 if __name__ == '__main__':
+
     if not (sys.version_info.major == 3 and sys.version_info.minor >= 8):
         print("This script requires Python 3.8 or higher!")
         print("You are using Python {}.{}.".format(sys.version_info.major, sys.version_info.minor))
         sys.exit(1)
-    inbox_count = get_inbox_count()
-    print(f"INBOX COUNT: {inbox_count}")
+    while True:
+        inbox_count = get_inbox_count()
+        print(f"INBOX COUNT: {inbox_count}")
 
-    if inbox_count > 0:
-        set_gpio(True)
-    else:
-        set_gpio(False)
+        if inbox_count > 0:
+            set_gpio(True)
+        else:
+            set_gpio(False)
+        time.sleep(int(config['DEFAULT']['SECONDS']))
