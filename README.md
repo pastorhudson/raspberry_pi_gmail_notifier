@@ -3,7 +3,7 @@ Script that checks gmail and turns on pin if there is new email.
 
 This script pulls the atom feed from: https://mail.google.com/mail/feed/atom
 
-It looks at the <fullcount>int</fullcount> tag and if it's greater than 0 it turns on the PIN configured in config.ini
+It looks at the fullcount tag and if it's greater than 0 it turns on the PIN configured in config.ini
 
 ## 1 INSTALL
 `git clone https://github.com/pastorhudson/raspberry_pi_gmail_notifier.git`
