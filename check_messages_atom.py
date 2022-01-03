@@ -5,12 +5,11 @@ import configparser
 from http.client import HTTPSConnection
 from base64 import b64encode
 import RPi.GPIO as GPIO
+from pathlib import Path
 
-
-
-
+p = Path('./config.ini')
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read(p.absolute())
 
 
 def get_inbox_count():
