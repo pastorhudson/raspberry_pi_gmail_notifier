@@ -13,11 +13,7 @@ There are no dependencies outside of Python Standard Library and RPi.GPIO.
 `git clone https://github.com/pastorhudson/raspberry_pi_gmail_notifier.git`
 
 ### Add autostart
-Add the file: 
-
-#### Install Rpi.GPIO if it's not already installed.
-- `sudo apt-get update`
-- `sudo apt-get install rpi.gpio`
+`./install.sh`
 
 ## 2 Edit config.ini
 Change the values in config.ini to configure the script.
@@ -47,3 +43,8 @@ SyntaxError: invalid syntax
 ```
 This error means you are using an unsupported version of python.
 FIX: Make sure you are using python >= 3.8
+
+### Rpi.GPIO Errors
+Install Rpi.GPIO if it's not already installed.
+- `sudo apt-get update`
+- `sudo apt-get install rpi.gpio`
