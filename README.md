@@ -23,7 +23,8 @@ SECONDS = 10
 ```
 
 ## 3 Run the script
-`python3 check_messages_atom.py`
+`python3 check_messages_atom.py` OR `checkgmail.sh`
+Both scripts will execute forever until exited with `CTRL+c`
 
 ### Errors
 
