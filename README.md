@@ -1,12 +1,19 @@
-# gmail_pi_notifier
-Script that checks gmail and turns on pin if there is new email.
+# Raspberry Pi Gmail Notifier
 
-This script pulls the atom feed from: https://mail.google.com/mail/feed/atom
+This script checks the gmail atom feed and turns on a pin if there is new email.
+
+Gmail atom feed url: https://mail.google.com/mail/feed/atom
 
 It looks at the fullcount tag and if it's greater than 0 it turns on the PIN configured in config.ini
 
+There are no dependencies outside of Pyhton Standard Library and RPi.GPIO.
+
 ## 1 INSTALL
+### Clone The Repo
 `git clone https://github.com/pastorhudson/raspberry_pi_gmail_notifier.git`
+### Install Rpi.GPIO if it's not already installed.
+`sudo apt-get update`
+`sudo apt-get install rpi.gpio`
 
 ## 2 Edit config.ini
 Change the values in config.ini to configure the script.
