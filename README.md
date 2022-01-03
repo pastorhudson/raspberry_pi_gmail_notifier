@@ -12,6 +12,9 @@ There are no dependencies outside of Python Standard Library and RPi.GPIO.
 ### Clone The Repo
 `git clone https://github.com/pastorhudson/raspberry_pi_gmail_notifier.git`
 
+### Add autostart
+Add the file: 
+
 #### Install Rpi.GPIO if it's not already installed.
 - `sudo apt-get update`
 - `sudo apt-get install rpi.gpio`

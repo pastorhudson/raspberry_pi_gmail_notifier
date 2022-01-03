@@ -54,11 +54,15 @@ if __name__ == '__main__':
         print("You are using Python {}.{}.".format(sys.version_info.major, sys.version_info.minor))
         sys.exit(1)
     while True:
-        inbox_count = get_inbox_count()
-        # print(f"INBOX COUNT: {inbox_count}")
+        try:
+            inbox_count = get_inbox_count()
+            # print(f"INBOX COUNT: {inbox_count}")
 
-        if inbox_count > 0:
-            set_gpio(True)
-        else:
-            set_gpio(False)
-        time.sleep(int(config['DEFAULT']['SECONDS']))
+            if inbox_count > 0:
+                set_gpio(True)
+            else:
+                set_gpio(False)
+            time.sleep(int(config['DEFAULT']['SECONDS']))
+        except Exception as e:
+            pass
+
