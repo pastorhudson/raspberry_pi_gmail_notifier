@@ -6,6 +6,7 @@ from http.client import HTTPSConnection
 from base64 import b64encode
 import RPi.GPIO as GPIO
 from pathlib import Path
+from check_messages_oauth import check_messages_oauth, gmail_authenticate
 
 p = Path('/home/pi/raspberry_pi_gmail_notifier/config.ini')
 config = configparser.ConfigParser()
@@ -21,7 +22,7 @@ def get_inbox_count():
 
     headers = {'Authorization': 'Basic %s' % userAndPass}
     # then connect
-    c.request('GET', '/mail/feed/atom', headers=headers) # The GMAIL RSS FEED
+    c.request('GET', '/mail/feed/atom', headers=headers)  # The GMAIL RSS FEED
     # get the response back
     res = c.getresponse()
     # at this point you could check the status etc
@@ -53,10 +54,11 @@ if __name__ == '__main__':
         print("This script requires Python 3.8 or higher!")
         print("You are using Python {}.{}.".format(sys.version_info.major, sys.version_info.minor))
         sys.exit(1)
+    service = gmail_authenticate()
     while True:
         try:
-            inbox_count = get_inbox_count()
-            # print(f"INBOX COUNT: {inbox_count}")
+            inbox_count = check_messages_oauth(service)
+            print(f"INBOX COUNT: {inbox_count}")
 
             if inbox_count > 0:
                 set_gpio(True)
