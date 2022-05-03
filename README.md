@@ -15,6 +15,8 @@ There are no dependencies outside of Python Standard Library and RPi.GPIO.
 ### Add autostart
 `./install.sh`
 
+Check Status `systemctl status email-notifier`
+
 ## 2 Edit config.ini
 Change the values in config.ini to configure the script.
 ### Example config.ini
