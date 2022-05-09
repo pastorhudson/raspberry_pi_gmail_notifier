@@ -11,7 +11,7 @@ There is now a requirement to load the gmail api libraries
 `git clone https://github.com/pastorhudson/raspberry_pi_gmail_notifier.git`
 
 ### Install Requirements
-`pip install requirements.txt`
+`pip install -r requirements.txt`
 
 ## 2 Edit config.ini
 Change the values in config.ini to configure the script.
@@ -38,6 +38,9 @@ That is probably /home/pi if you are executing from a startup script.
 ## 4 Run the script
 `python3 check_messages_atom.py` OR `checkgmail.sh`
 Both scripts will execute forever until exited with `CTRL+c`
+You need to open the link in the script on first run so you can authenticate.
+The authentication will create a `token.pickle` file. This file needs to be copied to the directory this will be run from.
+This is probably `/home/pi`
 
 ### Errors
 
