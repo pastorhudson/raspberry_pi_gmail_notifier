@@ -11,7 +11,7 @@ There is now a requirement to load the gmail api libraries
 `git clone https://github.com/pastorhudson/raspberry_pi_gmail_notifier.git`
 
 ### Install Requirements
-`pip install -r requirements.txt`
+`pip3 install -r requirements.txt`
 
 ## 2 Edit config.ini
 Change the values in config.ini to configure the script.
